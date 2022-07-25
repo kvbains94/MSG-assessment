@@ -12,7 +12,9 @@ public class Radar implements IRadar {
     public String GetData(int time)
     {
 
-        return RadarOutput.GetOutput(time-1);
+        // File reader kreeg ik niet op tijd werkend, vandaar dat ik het op deze manier heb gedaan.
+
+        return RadarOutput.GetOutput(time-1); // -1 is nodig omdat array index begint bij 0
     }
 
 }
