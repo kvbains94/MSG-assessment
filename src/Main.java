@@ -11,8 +11,10 @@ public class Main {
 
         Timer timer = new Timer();
         long start = System.currentTimeMillis();
-        int maxSimulationTime = 20;
+        int maxSimulationTime = 20; // depends on number of lines in RadarOutput
         Simulation sim = new Simulation(new Radar(), new IdentificationFriendFoe(), new MissileLauncher());
+
+        System.out.println("\nStarting Simulation\n");
 
         timer.schedule(new TimerTask() {
             @Override
@@ -29,9 +31,9 @@ public class Main {
                 if (elapsedTime >= maxSimulationTime)
                 {
                     timer.cancel();
+                    System.out.println("\nEnd of simualation\n");
                 }
             }
         }, 1000, 1000);//wait 0 ms before doing the action and do it every 1000ms (1second)
-
     }
 }
